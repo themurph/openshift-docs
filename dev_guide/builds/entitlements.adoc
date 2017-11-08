@@ -79,7 +79,7 @@ ifdef::openshift-enterprise[]
 [[entitlement-management-for-multi-tenancy]]
 === Entitlement Management For Multi-Tenancy
 
-For managing entitlements when migrating or upgrading build hosts, either within a cluster or in blue/green deployments, see the section on link:https://github.com/openshift/openshift-docs/blob/265b0a8e5597aadab32861cf13407af600bdaf46/install_config/upgrading/blue_green_deployments.adoc#blue-green-sharing-software-entitltments[Blue-Green Deployments]
+For managing entitlements when migrating or upgrading build hosts, either within a cluster or in blue/green deployments, see the section on link:https://docs.openshift.com/container-platform/3.6/install_config/upgrading/blue_green_deployments.html#blue-green-deployments-preparing-for-upgrade[Blue-Green Deployments]
 ////
 endif::openshift-enterprise[]
 ////
