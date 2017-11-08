@@ -74,7 +74,7 @@ Something is missing here, need to revisit.
 TODO
 This link doesn't actually point to good documentation for "secrets-patch"
 ////
-For more information on the background on the RHEL specific "super-secrets" patch see: link:https://github.com/projectatomic/docker/tree/docker-1.13.1-rhel#add-rhel-super-secrets-patchpatch[Project Atomic Release Notes for Docker 1.13.1]
+For more information on the background on the RHEL specific "super-secrets" patch see the  link:https://github.com/projectatomic/docker/tree/docker-1.13.1-rhel#add-rhel-super-secrets-patchpatch[Project Atomic Release Notes for Docker]
 
 [discrete]
 [[building-rhel-6-containers-on-rhel-7]]
@@ -82,6 +82,11 @@ For more information on the background on the RHEL specific "super-secrets" patc
 
 Since the *_/etc/yum.repos.d/redhat.repo_* file isn't populated until the first yum command, entitlements for RHEL 6 content is available to a RHEL 6 docker-formatted container as long as the entitlements for the RHEL 7 host also have permission for RHEL 6 content. This special functionality is what enables builds of RHEL 6 docker-formatted container on a RHEL 7 build host with no additional requirements.
 
+ifdef::openshift-enterprise[]
 [discrete]
 [[entitlement-management-for-multi-tenancy]]
 === Entitlement Management For Multi-Tenancy
+
+For managing entitlements when migrating or upgrading build hosts, either within a cluster or in blue/green deployments, see the section on link:https://github.com/openshift/openshift-docs/blob/265b0a8e5597aadab32861cf13407af600bdaf46/install_config/upgrading/blue_green_deployments.adoc#blue-green-sharing-software-entitltments[Sharing Software Entitlements]
+
+endif::openshift-enterprise[]
