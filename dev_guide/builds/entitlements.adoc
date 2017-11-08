@@ -67,7 +67,6 @@ When a docker-formatted container build is first started, the contents of *_/etc
 
 For more information on the background on the RHEL specific "super-secrets" patch see the  link:https://github.com/projectatomic/docker/tree/docker-1.13.1-rhel#add-rhel-super-secrets-patchpatch[Project Atomic Release Notes for Docker]
 
-[discrete]
 [[building-rhel-6-containers-on-rhel-7]]
 === Building RHEL 6 containers on RHEL 7 build hosts
 
