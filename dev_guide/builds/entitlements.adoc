@@ -53,9 +53,9 @@ When a docker-formatted container build is started, the host directory *_/usr/sh
 ----
 [c0725d5ddf52 /]# ls -l /run/secrets/
 total 344
-drwx------. 2 root root    138 Nov  5 22:52 etc-pki-entitlement
--rwx------. 1 root root 349446 Nov  5 22:52 rhel7.repo
-drwx------. 4 root root     73 Nov  5 22:52 rhsm
+drwx------. 2 root root    138 etc-pki-entitlement
+-rwx------. 1 root root 349446 rhel7.repo
+drwx------. 4 root root     73 rhsm
 ----
 
 [NOTE]
@@ -70,11 +70,18 @@ TODO
 Something is missing here, need to revisit.
 ////
 
-For more information on the background of the secrets patch see
-https://access.redhat.com/solutions/2711041
+////
+TODO
+This link doesn't actually point to good documentation for "secrets-patch"
+////
+For more information on the background on the RHEL specific "super-secrets" patch see: link:https://github.com/projectatomic/docker/tree/docker-1.13.1-rhel#add-rhel-super-secrets-patchpatch[Project Atomic Release Notes for Docker 1.13.1]
 
 [discrete]
 [[building-rhel-6-containers-on-rhel-7]]
 === Building RHEL 6 containers on RHEL 7 build hosts
 
 Since the *_/etc/yum.repos.d/redhat.repo_* file isn't populated until the first yum command, entitlements for RHEL 6 content is available to a RHEL 6 docker-formatted container as long as the entitlements for the RHEL 7 host also have permission for RHEL 6 content. This special functionality is what enables builds of RHEL 6 docker-formatted container on a RHEL 7 build host with no additional requirements.
+
+[discrete]
+[[entitlement-management-for-multi-tenancy]]
+=== Entitlement Management For Multi-Tenancy
