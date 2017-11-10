@@ -18,7 +18,7 @@ When planning a build of a RHEL based docker-formatted container that includes a
 
 The host that will be used to build a docker-formatted container will need to be subscribed to all repositories required during the build by using Red Hat Subscription Manager. During the build, a docker-formatted container will have access to the same subscriptions as the host through the use of the xref:secrets-patch[secrets patch]. The xref:secrets-patch[secrets patch] allows docker-formatted container images that are built on the host to enable *any* repository provided by the host's entitlements regardless of whether or not the repositories are enabled on the host. The reason for this relationship between the build environment for a docker-formatted container and host is because subscription-manager sub-commands are not available inside docker-formatted container images.
 
-You can get a complete list of which subscriptions will be available to the docker-formatted container during a build by running:
+A complete list of subscriptions available to the docker-formatted container during a build may be obtained by running:
 
 [source, bash]
 ----
