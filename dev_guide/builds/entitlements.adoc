@@ -37,7 +37,7 @@ Any repository enabled by the host can be seen by the container automatically. R
 
 To understand how docker-formatted containers are able to use any entitlements available to the host, a closer look at the secrets patch is needed.
 
-On the build host, the files needed for Red Hat Subscription Management (RHSM) are linked to from the *secrets* directory:
+On the build host, the files needed for Red Hat Subscription Management (RHSM) are linked from the *secrets* directory:
 
 [source, bash]
 ----
