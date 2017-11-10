@@ -60,7 +60,7 @@ drwx------. 4 root root     73 rhsm
 
 [NOTE]
 ====
-Currently docker-formatted containerized environment supports this functionality only via Red Hat Subscription Manager (RHSM). Docker containerized environment does not support the use of Red Hat Update Infrastructure (RHUI).
+Currently, docker-formatted containerized environment supports this functionality only via Red Hat Subscription Manager (RHSM). Docker containerized environment does not support the use of Red Hat Update Infrastructure (RHUI).
 ====
 
 When a docker-formatted container build is first started, the contents of *_/etc/yum.repos.d/redhat.repo_* inside the container are blank. It is only when the first `yum` command is issued that a docker-formatted container specific *_subscription-manager_* plugin contacts the RHSM network and provides entitlement information from the host (using the entitlement and RHSM information mounted in *_/run/secrets_*) to the container and uses the output to populate the *_/etc/yum.repos.d/redhat.repo_* file.
