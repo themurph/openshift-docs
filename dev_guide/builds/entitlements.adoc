@@ -14,9 +14,25 @@ toc::[]
 [[managing-entitlements-rhel-docker-formatted-builds]]
 == Managing Entitlements For RHEL Docker-Formatted Builds
 
-When planning a build of a RHEL based docker-formatted container that includes a package requiring a subscription (or "entitlement") not enabled on the build host, a deeper understanding of how subscriptions are inherited from the build host is needed to ensure a successful build.
+When planning the build of a RHEL based docker-formatted container that includes a package requiring a subscription (or "entitlement") not enabled on the build host, a deeper understanding of how subscriptions are inherited from the build host is needed to ensure a successful build.
 
-The host that will be used to build a docker-formatted container will need to be subscribed to all repositories required during the build by using Red Hat Subscription Manager. During the build, a docker-formatted container will have access to the same subscriptions as the host through the use of the xref:secrets-patch[secrets patch]. The xref:secrets-patch[secrets patch] allows docker-formatted container images that are built on the host to enable *any* repository provided by the host's entitlements regardless of whether or not the repositories are enabled on the host. The reason for this relationship between the build environment for a docker-formatted container and host is because subscription-manager sub-commands are not available inside docker-formatted container images.
+The host that will be used to build a docker-formatted container will need to be subscribed to all repositories required during the build by using Red Hat Subscription Manager. During the build, a docker-formatted container will have access to the same subscriptions as the host through the use of the xref:secrets-patch[secrets patch]. The xref:secrets-patch[secrets patch] is currently "on" by default on any host that has RHEL or Fedora based installs of docker version 1.1.2-4 or greater.
+
+To determine whether your version is patched, the following command can be run:
+
+[source, bash]
+----
+[root@docker_rpm -q --changelog docker| grep -B 1 "Add Secrets Patch"
+* Fri Jul 25 2014 Dan Walsh <dwalsh@redhat.com> - 1.1.2-4
+- Add Secrets Patch back in
+----
+
+[NOTE]
+====
+This command is run on the docker host system.
+====
+
+The xref:secrets-patch[secrets patch] allows docker-formatted container images that are built on the host to enable *any* repository provided by the host's entitlements regardless of whether or not the repositories are enabled on the host. The reason for this relationship between the build environment for a docker-formatted container and host is because subscription-manager sub-commands are not available inside docker-formatted container images.
 
 A complete list of subscriptions available to the docker-formatted container during a build may be obtained by running:
 
